@@ -1,7 +1,7 @@
 # 湖北大学互联网应用协会社团 解密挑战网站 前端
 
 提供：Dynamic Creative Center(Studio) 动力创意中心(工作室)<p>
-友情链接：[湖北大学互联网应用协会社团官方网站](https://iaahomepage.netlify.app/)<p>
+友情链接：[湖北大学互联网应用协会社团官方网站](https://itverse.cn/)<p>
 后端API仓库：[[Github]](https://github.com/NaSAeL-DWG/IAA_Puzzle_Activity_WebAPI)  [[Gitee]](https://gitee.com/nasael/IAA_Puzzle_Activity_WebAPI)
 
 ---
