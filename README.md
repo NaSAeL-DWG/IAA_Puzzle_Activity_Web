@@ -1,8 +1,8 @@
 # 湖北大学互联网应用协会社团 解密挑战网站 前端
 
 提供：Dynamic Creative Center(Studio) 动力创意中心(工作室)<p>
-友情链接：[湖北大学互联网应用协会社团官方网站](https://iaahomepage.netlify.app/)
-
+友情链接：[湖北大学互联网应用协会社团官方网站](https://iaahomepage.netlify.app/)<p>
+后端API仓库：[[Github]](https://github.com/NaSAeL-DWG/IAA_Puzzle_Activity_WebAPI)  [[Gitee]](https://gitee.com/nasael/IAA_Puzzle_Activity_WebAPI)
 ---
 
 
@@ -54,15 +54,15 @@ const API_BASE = '' // 空字符串，使用相对路径（通过Vite代理）
 
 ```javascript
 export default defineConfig({
-  server: {
-    proxy: {
-      '/api': {
-        target: 'http://your-api-base-url',
-        changeOrigin: true,
-        rewrite: (path) => path
-      }
+    server: {
+        proxy: {
+            '/api': {
+                target: 'http://your-api-base-url',
+                changeOrigin: true,
+                rewrite: (path) => path
+            }
+        }
     }
-  }
 })
 ```
 
@@ -140,18 +140,18 @@ npm run build
 ### 全局状态（appStore.js）
 ```javascript
 state = {
-  currentView: 'login',      // login, puzzle, summary, end, ban
-  token: '',                 // 用户令牌
-  stuId: '',                 // 学号
-  currentPuzzleId: 1,        // 当前关卡ID
-  puzzleData: null,          // 题目数据
-  userProgress: null,        // 用户进度
-  isLoading: false,          // 加载状态
-  isBanned: false,           // 封禁状态
-  banInfo: null,             // 封禁信息
-  messageWindow: { ... },    // 消息窗口
-  sideToast: { ... },        // 侧边提示
-  answerInput: ''            // 答案输入
+    currentView: 'login',      // login, puzzle, summary, end, ban
+    token: '',                 // 用户令牌
+    stuId: '',                 // 学号
+    currentPuzzleId: 1,        // 当前关卡ID
+    puzzleData: null,          // 题目数据
+    userProgress: null,        // 用户进度
+    isLoading: false,          // 加载状态
+    isBanned: false,           // 封禁状态
+    banInfo: null,             // 封禁信息
+    messageWindow: { ... },    // 消息窗口
+    sideToast: { ... },        // 侧边提示
+    answerInput: ''            // 答案输入
 }
 ```
 
