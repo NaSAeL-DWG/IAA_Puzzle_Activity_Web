@@ -38,16 +38,16 @@
     <!-- Footer版权信息 -->
     <div class="footer">
       <div class="footer-left">
-        <a href="https://gitee.com" target="_blank" class="repo-icon" title="Gitee">
+        <a href="https://gitee.com/nasael/IAA_Puzzle_Activity_Web" target="_blank" class="repo-icon" title="Gitee">
           <MDIcon name="gitee" size="small" />
         </a>
-        <a href="https://github.com" target="_blank" class="repo-icon" title="GitHub">
+        <a href="https://github.com/NaSAeL-DWG/IAA_Puzzle_Activity_Web" target="_blank" class="repo-icon" title="GitHub">
           <MDIcon name="github" size="small" />
         </a>
       </div>
       <div class="footer-center">
-        <span class="copyright">Copyright © 2025 <a href="https://iaahomepage.netlify.app/" target = "_blank">HUBU_IAA_Association 湖北大学互联网应用协会.</a> All rights reserved.</span>
-        <span class="version">v1.1.3</span>
+        <span class="copyright">Copyright © 2025 <a href="https://itverse.cn" target = "_blank">HUBU_IAA_Association 湖北大学互联网应用协会.</a> All rights reserved.</span>
+        <span class="version">v1.2.0</span>
       </div>
       <div class="footer-right">
         <div class="footer-creative-top">创意总监：Dynamic Creative Center(Studio)</div>

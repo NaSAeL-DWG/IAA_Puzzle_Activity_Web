@@ -1,6 +1,6 @@
 // API服务配置和基础函数
-// 使用相对路径，通过Vite代理转发到后端
-const API_BASE = '' // 空字符串，使用相对路径
+// 当Vite proxy被禁用时，需要使用完整的后端地址
+const API_BASE = '' // 完整后端地址
 
 // 封装fetch请求
 async function apiRequest(endpoint, options = {}) {

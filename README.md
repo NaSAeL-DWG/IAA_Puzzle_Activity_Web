@@ -44,14 +44,14 @@ src/
 ## 🔧 API配置
 
 ### API基础配置
-在 `src/services/api.js` 中配置：
+在 `src/services/api.js` 中配置（本地调试或者API跨站时）：
 
 ```javascript
-const API_BASE = '' // 空字符串，使用相对路径（通过Vite代理）
+const API_BASE = '' 
 ```
 
 ### Vite代理配置
-在 `vite.config.js` 中配置代理：
+在 `vite.config.js` 中配置代理（本地调试或者API跨站时）：
 
 ```javascript
 export default defineConfig({
@@ -66,15 +66,16 @@ export default defineConfig({
     }
 })
 ```
-
+>[!TIP]
+> 进入生产环境时Vite代理可能不会生效
 ### 支持的API接口
 
-参见： [湖北大学互联网应用协会社团 解密挑战网站 后端](超链接地址 "超链接title")
+参见： [湖北大学互联网应用协会社团 解密挑战网站 后端](https://github.com/NaSAeL-DWG/IAA_Puzzle_Activity_WebAPI)
 
 ## 📦 安装和运行
 
 ### 环境要求
-- Node.js 16+
+- Node.js 24+
 - npm 或 yarn
 
 ### 安装依赖
@@ -87,13 +88,14 @@ npm install
 npm run dev
 ```
 
-访问 http://localhost:5174/ 查看应用
+访问 http://localhost:5174/ 或Vite在命令行给出的地址查看应用
 
 ### 构建生产版本
 ```bash
 npm run build
 ```
-
+>[!IMPORTANT]
+>出于安全考虑，正式部署项目时应使用生产版本
 ## 🎯 使用流程
 
 ### 1. 首次访问
@@ -164,19 +166,13 @@ state = {
 
 ## ⚠️ 注意事项
 
-1. **API地址**: 必须在 `vite.config.js` 中配置正确的代理地址
+1. **API地址**:本地调试时：必须在 `vite.config.js` 中配置正确的代理地址
 2. **Token管理**: Token存储在localStorage中，清除浏览器数据会退出登录
 3. **浏览器兼容性**: 需要支持现代JavaScript特性和CSS Grid
 4. **网络依赖**: 需要网络连接来访问后端API
 5. **封禁处理**: 封禁状态会阻止用户继续游戏，需联系管理员解封
 
 ## 🛠️ 开发说明
-
-### 添加新功能
-- 在 `src/stores/appStore.js` 中添加状态
-- 在 `src/services/api.js` 中添加API调用
-- 在 `src/components/` 中添加新组件
-- 在 `src/App.vue` 中更新路由逻辑
 
 ### 调试技巧
 - 查看浏览器控制台的网络请求
@@ -195,3 +191,9 @@ MIT License
 
 ## 🤝 贡献指南
 欢迎提交Issue和Pull Request来改进这个项目！
+
+## 本项目使用了以下项目
+
+- [Material Symbols](https://m3.material.io/)
+- [Simple Icons](https://simpleicons.org/)
+- [canvas-confetti](https://github.com/catdad/canvas-confetti)
