@@ -6,7 +6,7 @@
         <h1 class="title">解密挑战</h1>
         <MDIcon name="star" size="large" class="star-icon" />
       </div>
-      <p class="subtitle">探索宇宙的奥秘，解开6个神秘关卡</p>
+      <p class="subtitle">玩转互联网谜题：解锁你的数字脑洞</p>
       
       <div class="auth-form">
         <div class="input-group">

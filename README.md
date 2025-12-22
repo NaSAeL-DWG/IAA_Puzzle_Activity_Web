@@ -192,8 +192,12 @@ MIT License
 ## 🤝 贡献指南
 欢迎提交Issue和Pull Request来改进这个项目！
 
-## 本项目使用了以下项目
+## ✨本项目使用了以下项目
 
 - [Material Symbols](https://m3.material.io/)
 - [Simple Icons](https://simpleicons.org/)
 - [canvas-confetti](https://github.com/catdad/canvas-confetti)
+
+## 📧 联系我们
+动力创意中心(工作室)
+e-mail: [dynamicwavegroup@gmail.com](mailto:dynamicwavegroup@gmail.com)

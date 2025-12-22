@@ -43,7 +43,7 @@
           <input 
             v-model="answerInput"
             type="text" 
-            placeholder="请输入答案" 
+            :placeholder="answerFormatPlaceholder" 
             class="input-field"
             @keyup.enter="handleSubmit"
           />
@@ -64,7 +64,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { state, actions } from '../stores/appStore'
-import { puzzleAPI } from '../services/api'
+import { puzzleAPI, userAPI } from '../services/api'
 import { validateAnswer, formatErrorMessage } from '../utils/helpers'
 import MDIcon from './MDIcon.vue'
 
@@ -77,6 +77,11 @@ const currentPuzzleId = computed(() => state.currentPuzzleId)
 const puzzleData = computed(() => state.puzzleData)
 const isLoading = computed(() => state.isLoading)
 const token = computed(() => state.token)
+
+// 答案格式占位符 - 从API返回的answer_format字段获取
+const answerFormatPlaceholder = computed(() => {
+  return puzzleData.value?.answer_format || '请输入答案'
+})
 
 // 提示显示状态
 const showTips = ref(false)
@@ -95,9 +100,36 @@ const toggleTips = () => {
   showTips.value = !showTips.value
 }
 
-const handleBack = () => {
-  actions.setView('summary')
-  actions.setAnswerInput('')
+const handleBack = async () => {
+  actions.setLoading(true)
+  
+  try {
+    // 重新获取用户进度
+    const progressResponse = await userAPI.getUserProgress(token.value)
+    
+    // 检查封禁状态
+    if (progressResponse.ban === true) {
+      actions.setBanned(true)
+      actions.setView('ban')
+      actions.showSideToast('您的账户已被封禁', 'error')
+      return
+    }
+    
+    // 更新用户进度
+    actions.setUserProgress(progressResponse)
+    
+    // 返回到关卡选择界面
+    actions.setView('summary')
+    actions.setAnswerInput('')
+    
+    // 显示成功提示
+    actions.showSideToast('已刷新答题情况', 'success')
+  } catch (error) {
+    const message = formatErrorMessage(error)
+    actions.showMessage(message, 'error')
+  } finally {
+    actions.setLoading(false)
+  }
 }
 
 const handleSubmit = async () => {
