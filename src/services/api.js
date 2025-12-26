@@ -42,11 +42,17 @@ async function apiRequest(endpoint, options = {}) {
 // 用户相关API
 export const userAPI = {
   // 创建用户
-  createUser: (stuId) => 
-    apiRequest('/api/user/create_user', {
+  createUser: (stuId, nameInfo) => {
+    // 对nameInfo进行URL编码，处理中文和特殊字符
+    const encodedNameInfo = encodeURIComponent(nameInfo)
+    return apiRequest('/api/user/create_user', {
       method: 'POST',
-      headers: { 'stu-id': stuId }
-    }),
+      headers: { 
+        'stu-id': stuId,
+        'name-info': encodedNameInfo
+      }
+    })
+  },
 
   // 用户登录
   login: (stuId) =>

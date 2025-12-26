@@ -47,7 +47,7 @@
       </div>
       <div class="footer-center">
         <span class="copyright">Copyright © 2025 <a href="https://itverse.cn" target = "_blank">HUBU_IAA_Association 湖北大学互联网应用协会.</a> All rights reserved.</span>
-        <span class="version">v1.2.0</span>
+        <span class="version">v1.2.2</span>
       </div>
       <div class="footer-right">
         <div class="footer-creative-top">创意总监：Dynamic Creative Center(Studio)</div>

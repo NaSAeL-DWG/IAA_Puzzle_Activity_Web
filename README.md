@@ -44,14 +44,14 @@ src/
 ## 🔧 API配置
 
 ### API基础配置
-在 `src/services/api.js` 中配置（本地调试或者API跨站时）：
+在 `src/services/api.js` 中配置（本地调试时）：
 
 ```javascript
 const API_BASE = '' 
 ```
 
 ### Vite代理配置
-在 `vite.config.js` 中配置代理（本地调试或者API跨站时）：
+在 `vite.config.js` 中配置代理（本地调试时）：
 
 ```javascript
 export default defineConfig({
@@ -67,7 +67,7 @@ export default defineConfig({
 })
 ```
 >[!TIP]
-> 进入生产环境时Vite代理可能不会生效
+> 进入生产环境时Vite代理可能不会生效，建议使用nginx反代
 ### 支持的API接口
 
 参见： [湖北大学互联网应用协会社团 解密挑战网站 后端](https://github.com/NaSAeL-DWG/IAA_Puzzle_Activity_WebAPI)

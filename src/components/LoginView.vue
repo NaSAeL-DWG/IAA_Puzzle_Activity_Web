@@ -21,6 +21,17 @@
           />
         </div>
         
+        <div class="input-group" style="margin-top: 15px;">
+          <MDIcon name="info" class="input-icon" />
+          <input 
+            v-model="nameInfo" 
+            type="text" 
+            placeholder="注册时请在此填写身份信息" 
+            class="input-field"
+            @keyup.enter="handleRegister"
+          />
+        </div>
+        
         <div class="button-group">
           <button 
             class="btn-primary" 
@@ -53,6 +64,7 @@ import { validateStuId, formatErrorMessage } from '../utils/helpers'
 import MDIcon from './MDIcon.vue'
 
 const stuId = ref('')
+const nameInfo = ref('')
 const isLoading = ref(false)
 
 const handleAuth = async (isLogin) => {
@@ -63,12 +75,18 @@ const handleAuth = async (isLogin) => {
     return
   }
 
+  // 注册时验证身份信息不为空
+  if (!isLogin && !nameInfo.value.trim()) {
+    actions.showSideToast('注册时请填写身份信息', 'error')
+    return
+  }
+
   isLoading.value = true
 
   try {
     const response = isLogin 
       ? await userAPI.login(stuId.value)
-      : await userAPI.createUser(stuId.value)
+      : await userAPI.createUser(stuId.value, nameInfo.value)
 
     // 检查封禁状态
     if (response.ban === true) {
